@@ -16,7 +16,7 @@
       <th scope="row">{{$video->id}}</th>
       <td>{{$video->name}}</td>
       <td>{{$video->category}}</td>
-      <td>{{$video->duration}}</td>
+      <td>{{$video->duration}} min</td>
     </tr>
   @endforeach
   </tbody>
