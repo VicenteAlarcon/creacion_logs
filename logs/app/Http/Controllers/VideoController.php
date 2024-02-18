@@ -10,7 +10,7 @@ class VideoController extends Controller
    /**
     * Controlador para la intección de dependencias
     */
-    protected $videoService
+    protected $videoService;
 
     public function __construct(GetVideosService $videoService) 
     {
