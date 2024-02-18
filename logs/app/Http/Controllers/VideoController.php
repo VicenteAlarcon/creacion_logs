@@ -11,7 +11,8 @@ class VideoController extends Controller
      */
     public function index()
     {
-        //
+      
+      return view('videos.index', compact('videos'));
     }
 
     /**
@@ -19,7 +20,7 @@ class VideoController extends Controller
      */
     public function create()
     {
-        //
+        return view('videos.create')
     }
 
     /**
@@ -27,7 +28,13 @@ class VideoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $video = new Video();
+        $video->name = $request->input('name');
+        $video->category = $request->input('category');
+        $video->duration = $request->input('duration');
+        $video->save();
+
+        return redirect()->route('videos.index')->withSuccess('Video creado correctamente');
     }
 
     /**
@@ -35,7 +42,8 @@ class VideoController extends Controller
      */
     public function show(string $id)
     {
-        //
+      
+        return view('video.details', ['video' => $video]);
     }
 
     /**
@@ -43,7 +51,7 @@ class VideoController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        
     }
 
     /**
