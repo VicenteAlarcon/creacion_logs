@@ -21,6 +21,7 @@
   @endforeach
   </tbody>
 </table>
+<a href="{{route('videos.create')}}" class="btn btn-info">Registro de actividad</a>
 <a href="{{route('vista-logs')}}" class="btn btn-warning">Registro de actividad</a>
 @endsection
 
