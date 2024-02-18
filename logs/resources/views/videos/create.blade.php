@@ -4,20 +4,20 @@
 <form action="{{route('videos.store')}}" method="post">
     @csrf
   <div class="row mb-3">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Nombre</label>
     <div class="col-sm-10">
       <input type="text" class="form-control" id="inputEmail3" name="name">
     </div>
   </div>
   <div class="row mb-3">
-    <label for="inputPassword3" class="col-sm-2 col-form-label">category</label>
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Categoria</label>
     <div class="col-sm-10">
       <input type="text" class="form-control" id="inputPassword3" name="category">
     </div>
   </div>
 
   <div class="row mb-3">
-    <label for="inputPassword3" class="col-sm-2 col-form-label">category</label>
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Duración</label>
     <div class="col-sm-10">
       <input type="number" class="form-control" id="inputPassword3" name="duration">
     </div>
