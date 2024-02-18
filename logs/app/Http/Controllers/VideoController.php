@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Services\GetVideosService;
 use Illuminate\Http\Request;
-
+use App\Models\Video;
 class VideoController extends Controller
 {
 
