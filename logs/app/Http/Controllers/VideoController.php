@@ -80,7 +80,7 @@ class VideoController extends Controller
             'category' => $request->input('category'),
             'duration' => $request->input('duration'),
         ]);
-        return redirect()->route('videos.')
+        return redirect()->route('videos.edit');
     }
 
     /**
