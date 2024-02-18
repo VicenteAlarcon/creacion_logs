@@ -14,7 +14,7 @@ class VideoController extends Controller
     public function index()
     {
         $videos = Video::all();
-        return response()->json(['videos' => $videos], 200);
+        return response()->json(['data' => $videos], 200);
     }
 
     /**
