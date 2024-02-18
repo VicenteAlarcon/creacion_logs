@@ -1,17 +1,31 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Services\GetVideosService;
 use Illuminate\Http\Request;
 
 class VideoController extends Controller
 {
+
+   /**
+    * Controlador para la intección de dependencias
+    */
+    protected $videoService
+
+    public function __construct(GetVideosService $videoService) 
+    {
+
+     $this->videoService = $videoService;
+
+    }
+
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-      
+      $videos = $this->videoService->getAllVideos();
       return view('videos.index', compact('videos'));
     }
 
@@ -42,7 +56,7 @@ class VideoController extends Controller
      */
     public function show(string $id)
     {
-      
+         $video = $this->videosService->getConcreteVideos($id);
         return view('video.details', ['video' => $video]);
     }
 
@@ -51,7 +65,8 @@ class VideoController extends Controller
      */
     public function edit(string $id)
     {
-        
+        $video = $this->videosService->getConcreteVideos($id);
+        return view('video.edit', compact('video'));
     }
 
     /**
@@ -59,7 +74,13 @@ class VideoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $video = $this->videosService->getConcreteVideos($id);
+        $video->update([
+            'name' => $request->input('name'),
+            'category' => $request->input('category'),
+            'duration' => $request->input('duration'),
+        ]);
+        return redirect()->route('videos.')
     }
 
     /**
@@ -67,6 +88,7 @@ class VideoController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $video = $this->videosService->getConcreteVideos($id);
+        $video->delete();
     }
 }
