@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 @section('contenido')
 
-<form action="{{route('videos.store)}}" method="post">
+<form action="{{route('videos.store')}}" method="post">
     @csrf
   <div class="row mb-3">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
