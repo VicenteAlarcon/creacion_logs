@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VideoController;
+use App\Http\Controllers\LogsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,3 +19,4 @@ Route::get('/', function () {
 });
 
 route::resource('videos', VideoController::class);
+Route::get('/logs', [LogsController::class, 'index'])->name('vista-logs');
