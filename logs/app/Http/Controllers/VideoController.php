@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Services\GetVideosService;
 use Illuminate\Http\Request;
 use App\Models\Video;
+use App\Models\Log;
 class VideoController extends Controller
 {
 
@@ -47,7 +48,10 @@ class VideoController extends Controller
         'category' => $request->input('category'),
         'duration' => $request->input('duration'),
         ]);
-       
+         Log::create([
+            'name'=>"Crear",
+            'description' => 'Se ha creado el video '.$request->input('name'),
+         ]);
 
         return redirect()->route('videos.index')->withSuccess('Video creado correctamente');
     }
