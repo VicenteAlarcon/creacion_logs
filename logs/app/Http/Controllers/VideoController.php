@@ -42,11 +42,14 @@ class VideoController extends Controller
      */
     public function store(Request $request)
     {
-        $video = new Video();
-        $video->name = $request->input('name');
-        $video->category = $request->input('category');
-        $video->duration = $request->input('duration');
-        $video->save();
+        $video = Video::create([
+
+ 
+        $video->name = $request->input('name'),
+        $video->category = $request->input('category'),
+        $video->duration = $request->input('duration'),
+        ]);
+       
 
         return redirect()->route('videos.index')->withSuccess('Video creado correctamente');
     }
