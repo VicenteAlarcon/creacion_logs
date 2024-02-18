@@ -12,6 +12,6 @@ class GetVideosService
 
     public function getConcreteVideos($id)
     {
-        return Video::find($id)
+        return Video::find($id);
     }
 }
