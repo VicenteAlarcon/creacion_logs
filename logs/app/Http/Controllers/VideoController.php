@@ -43,9 +43,9 @@ class VideoController extends Controller
     public function store(Request $request)
     {
         $video = Video::create([
-        'name' = $request->input('name'),
-        'category' = $request->input('category'),
-        'duration' = $request->input('duration'),
+        'name' => $request->input('name'),
+        'category' => $request->input('category'),
+        'duration' => $request->input('duration'),
         ]);
        
 
